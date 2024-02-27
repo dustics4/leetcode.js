@@ -12,15 +12,7 @@ function searchInsert(nums, target){
             return mid
         }
     }
-    return 1;
+    return l;
 }
 
 searchInsert([1,3,5,6], 5);
-
-//only works with this case.
-/* 
-Doesn't Work for below case:
-nums = [1,3,5,6]
-target = 2
-Expected = 1;
-*/
