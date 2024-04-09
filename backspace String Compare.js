@@ -34,6 +34,23 @@ const backspaceCompare = function (s,t) {
     }
 
     return true;
+
+    //better solution
+
+    function remove_backspaces(string){
+        a = [];
+        for(let i = 0; i<string.length; i++){
+            if(string[i] != '#') a.push(string[i]);
+            else if(a.length > 0) a.pop();
+        }
+        return a.join("")
+    }
+     
+    s = remove_backspaces(s);
+    t = remove_backspaces(t);
+    return s == t;
+
+    
 }
 
 backspaceCompare("ab#c", "ad#c");
