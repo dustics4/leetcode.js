@@ -5,7 +5,7 @@ const backspaceCompare = function (s,t) {
     //check if new s === t
     //if yes return true , else false
 
-    let i = s.length -1;
+    let i = s.length - 1;
     let j = t.length - 1;
     let sSkipCount = 0;
     let tSkipCount = 0;
@@ -16,9 +16,24 @@ const backspaceCompare = function (s,t) {
             sSkipCount++
             //decrease the pointer by 1, get closer to the start of the string
             i--;
+        }else if(sSkipCount > 0 && i >=0){
+            sSkipCount--;
+            i--;
+        }else if(t[j] === '#'){
+            tSkipCount++;
+            j--;  
+        }else if(tSkipCount > 0 && i >=0){
+            tSkipCount--;
+            j--;
+        }else if(s[i] !== t[j]){
+           return false ;
+        }else{
+            i--;
+            j--;
         }
     }
 
+    return true;
 }
 
 backspaceCompare("ab#c", "ad#c");
