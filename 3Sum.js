@@ -1,17 +1,14 @@
 function threeSum(nums, target){
     let result = [];
 
-    for(let i = 0; i < nums.length; i++){
-        for(let j = i + 1; nums.length; i++){
-            for(let k = j + 1; nums.length; i++){
-                if(nums[i] + nums[j] + nums[k] === target){
-                    result.push(nums[i],nums[j], nums[k]);
-                }
-            }
-        }
+    nums.sort((a,b) =>  a - b);
+
+    for(let i = 0; i < nums.length - 2; i++){
+        if( i > 0 && nums[i] === nums[i - 1]) continue; //checks if current element i is a duplicate of the previous element, if it is skips to the next iteration using continue
+        
+
     }
 
-    console.log(result)
 }
 
 threeSum([-1,0,1,2,-1,-4], 0);;
