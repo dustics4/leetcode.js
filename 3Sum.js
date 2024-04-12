@@ -10,7 +10,7 @@ function threeSum(nums, target){
         while(left < right){
             let sum = nums[i] + nums[left] + nums[right];
             if(sum === target){
-                result.push(nums[i], nums[left], nums[right]);
+                result.push([nums[i], nums[left], nums[right]]);
                 while(left < right && nums[left] === nums[left - 1]) left++;
                 while(left < right && nums[right] === nums[right -1]) right--;
                 left++;
