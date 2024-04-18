@@ -8,6 +8,7 @@ const twoSum = function(nums, target) {
         }
     }*/
 
+    /*
     //TWO POINTER Approach 
 
     //first we sort the array
@@ -38,7 +39,19 @@ const twoSum = function(nums, target) {
         if(nums[i] == num1) result[0] = i;
         if(nums[i] == num2) result[1] = i;
     }
-    console.log(result);
+    console.log(result);*/
+
+    //HASHMAP result
+
+    let hashMap = {};
+
+    for(let i = 0; i < nums.length; i++){
+        let complement = target - nums[i];
+        if(hashMap[complement] !== undefined){
+            return [hashMap[complement] , i];
+        }
+        hashMap[nums[i]] = i;
+    }
 }
 
 twoSum([2,7,11,15], 9)
